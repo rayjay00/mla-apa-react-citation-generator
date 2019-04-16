@@ -46,7 +46,7 @@ const CitationForm = ({ updateState, handleSubmit, firstVal, lastVal, titleVal, 
                 <StyledInput onChange={(event) => updateState('first', event.target.value)} value={ firstVal || ''} type="text" required name="first" />
             </StyledLabel>
             <StyledLabel>
-                Last required Name:
+                Last Name:
                 <StyledInput onChange={(event) => updateState('last', event.target.value) } value={ lastVal || ''} type="text" required name="last" />
             </StyledLabel>
             <StyledLabel>

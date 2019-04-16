@@ -10,6 +10,9 @@ export const stylesettings = {
         secondary: "#BD85D3",
         secondaryhover: "#813A9D",
         secondaryboxshadow: "#6F1F8E"
+    },
+    extra: {
+        modalbg: "#d28484"
     }
 }
 

@@ -8,9 +8,7 @@ const StyledModal = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color:
-    ${(props) => props.style === 'MLA' ? stylesettings.mla.primary 
-    : stylesettings.apa.primary };
+    background-color: ${ stylesettings.extra.modalbg };
     padding: 1rem 0.5rem;
     border-radius: 10px;
 `
