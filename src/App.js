@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './App.css';
 import CitationList from './CitationList';
 import Container from './Container';
 import Choose from './Choose';
@@ -9,140 +8,117 @@ import styled from 'styled-components';
 
 const StyledWrapper=styled.section`
     display: flex;
-`
+    margin: 0 auto;
+    @media screen and (max-width: 551px) {
+      flex-direction: column-reverse;
+    }
+    @media screen and (min-width: 1500px) {
+      width: 75%;
+    }
+`;
+const StyledAbout = styled.p`
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    a {
+      color: white;
+    }
+`;
 
 const App = () => {
-    //ran citation? this controls the modal
-    const [modal, showModal] = useState(false)
-    //set up the hooks for each value
-    const [style, setStyle] = useState('MLA');
-    const [first, setFirst] = useState('')
-    const [last, setLast] = useState('')
-    const [title, setTitle] = useState('')
-    const [year, setYear] = useState('')
-    const [city, setCity] = useState('')
-    const [publisher, setPublisher] = useState('')
+    //First time using hooks
 
-    //this will be an array of objects of the previous citations being run
+    //Set up the state for MLA or APA - we will start with MLA
+    const [style, setStyle] = useState('MLA');
+
+    //Setting up our form state for the citation form.
+    const [formState, setFormState] = useState({
+      first: "",
+      second: "",
+      title: "",
+      year: "",
+      city: "",
+      state: "",
+      publisher: ""
+    });
+
+    //This is an array of the previous citations. This will be used in the CitationsList component to view previous citations.
     const [citationsPrevious, setCitationsPrevious] = useState([]);
 
-    //the current citation - most recent one. Each object will be added to the citation component to be rendered in either MLA or APA format.
-    const [citationRecent, setRecentCitation] = 
-      useState({
-        first: "",
-        last: "",
-        title: "",
-        year: "",
-        city: "",
-        publisher: ""
-      });
+    //Did we check a citation yet? This controls the modal, which showModal fires off some other functions.
+    const [modal, showModal] = useState(false)
 
-    //Choose a citation style
-    //This will toggle the style of citation that will be shown in modal, text for the type of citation, but will also toggle back and forth previous citations
+    //This will toggle the style of citation that will be shown in modal, text for the type of citation, but will also toggle back and forth previous citations between formats.
     const chooseStyle = (event) => {
       setStyle(event.target.value);
     }
 
-    //reset to initial state after the form has been submitted.
-    const resetState = () => {
-      showModal(false)
-      showModal('')
-      setFirst('')
-      setLast('')
-      setTitle('')
-      setYear('')
-      setCity('')
-      setPublisher('')
+    //This function is passed to the form component itself and will set the state of the inputs onChange
+    const updateState = (key, value) => {
+      setFormState(state => ({
+        ...state,
+        [key]: value,
+      }))
     }
-    //The main function that runs the citation and sets the citation object
+
+    //The 'main' function that runs the citation and sets the citation object
     const handleSubmit = (event) => {
       event.preventDefault();
-      //first we need to set the citation ran to true!
+      //We need to show the modal.
       showModal(true)
-      //next we need to set the whole state of the object 
-      setRecentCitation({
-        style: style,
-        first: first,
-        last: last,
-        title: title,
-        year: year,
-        city: city,
-        publisher: publisher
-      })
-    }
-    //rather than rewriting the same setstate, I wanted to do it with a switch
-    const setFirstName = (event) => {
-      setFirst(event.currentTarget.value)
-    }
-
-
-    const setLastName = (event) => {
-      setLast(event.currentTarget.value);
-    }
-
-    const setBookTitle = (event) => {
-      setTitle(event.currentTarget.value);
-    }
-
-    const setBookYear = (event) => {
-      setYear(event.currentTarget.value);
-    }
-
-    const setPublisherName = (event) => {
-      setPublisher(event.currentTarget.value);
-    }
-
-    const setPublishCity = (event) => {
-      setCity(event.currentTarget.value);
     }
 
     //when we close the modal we want to show
     const modalClosed = () => {
       showModal(false);
-      //we push the object from the current citation to the array when we close the modal.
+      //next we need to set the whole state of the object 
       setCitationsPrevious(
-        [...citationsPrevious, citationRecent]
+        [...citationsPrevious, formState]
       )
       //we reset the state once the modal closes
-      resetState();
+      setFormState({
+        first: "",
+        last: "",
+        title: "",
+        year: "",
+        city: "",
+        state: "",
+        publisher: ""
+      })
     }
 
     return (
-      <>
         <StyledWrapper>
-          <Container selected={ style }>
+          <Container style={ style }>
             <Choose chooseStyle={ chooseStyle } style={ style } />
+            <StyledAbout>Built by <a href="https://www.linkedin.com/in/ryanjordal">Ryan</a>. See it <a href="https://www.github.com/rayjay00">here on GitHub</a>.</StyledAbout>
             <CitationForm 
-              setFirstName={ setFirstName } 
-              firstVal={ first }
-              setLastName={ setLastName }
-              lastVal={ last }
-              setBookTitle={ setBookTitle }
-              titleVal={ title }
-              setBookYear={ setBookYear }
-              yearVal={ year }
-              setPublishCity={ setPublishCity }
-              cityVal={ city }
-              setPublisher={ setPublisherName }
-              pubVal={ publisher }
-              style={ style } 
               handleSubmit={ handleSubmit }
+              updateState={ updateState } 
+              firstVal={ formState.first }
+              lastVal={ formState.last }
+              titleVal={ formState.title }
+              yearVal={ formState.year }
+              cityVal={ formState.city }
+              stateVal={ formState.state }
+              pubVal={ formState.publisher }
+              style={ style } 
             />
           </Container>
           {citationsPrevious.length > 0 && 
-            <CitationList style={ style } 
-            citationsPrevious={ citationsPrevious } />
+            <CitationList 
+              style={ style } 
+              citationsPrevious={ citationsPrevious } />
           }
           {
-            modal ? <Modal 
-            modalClosed={ modalClosed } 
-            style={ style } 
-            citation={ citationRecent }
+            modal && 
+            <Modal 
+              modalClosed={ modalClosed } 
+              style={ style } 
+              citation={ formState }
             />
-            : false
           }
         </StyledWrapper>
-      </>
     );
 }
 
