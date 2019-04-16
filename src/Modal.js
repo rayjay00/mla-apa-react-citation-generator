@@ -15,6 +15,8 @@ const StyledModal = styled.div`
 
 export const StyledListHeading = styled.h2`
     color: white;
+    display: inline;
+    padding-left: 1rem;
 `;
 
 
