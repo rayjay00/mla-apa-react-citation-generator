@@ -28,10 +28,6 @@ const StyledSubmitButton = styled.button`
   border: 0;
   display: flex;
   background-color: ${stylesettings.mla.primary};
-  box-shadow: 0px 5px 0px 0px ${stylesettings.mla.primary};
-    &:hover {
-        background-color: ${stylesettings.mla.primary};
-    }
     &:active {
         transform: translate(0px, 5px);
         box-shadow: 0px 1px 0px 0px;
