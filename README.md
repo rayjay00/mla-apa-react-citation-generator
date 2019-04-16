@@ -1,4 +1,4 @@
-##About This Project
+## About This Project
 
 This is a citation generator that toggles between MLA and APA book citations. I used styled components and Create React App to get started. 
 
