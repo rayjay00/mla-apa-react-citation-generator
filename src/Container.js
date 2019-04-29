@@ -17,7 +17,7 @@ const StyledContainer = styled.div`
         width: 40%;
     }
     @media screen and (min-width: 1261px) {
-        width: 25%;
+        width: auto;
     }
 `;
 
