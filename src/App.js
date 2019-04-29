@@ -91,7 +91,7 @@ const App = () => {
         <StyledWrapper>
           <Container style={ style }>
             <Choose chooseStyle={ chooseStyle } style={ style } />
-            <StyledAbout>Built by <a href="https://www.linkedin.com/in/ryanjordal">Ryan</a>. See it <a href="https://www.github.com/rayjay00">here on GitHub</a>.</StyledAbout>
+            <StyledAbout>Built by <a href="https://www.ryanjordal.me">Ryan</a>. See it <a href="https://www.github.com/rayjay00">here on GitHub</a>.</StyledAbout>
             <CitationForm 
               handleSubmit={ handleSubmit }
               updateState={ updateState } 
