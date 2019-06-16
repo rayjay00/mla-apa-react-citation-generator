@@ -10,7 +10,11 @@ const CitationList = ({ citationsPrevious, style }) => {
       <StyledListHeading>Your {style} Format Citations</StyledListHeading>
       {citationsPrevious.map(citation => {
         return (
-          <Citation key={citation} style={style} citationText={citation} />
+          <Citation
+            key={JSON.stringify(citation)}
+            style={style}
+            citationText={citation}
+          />
         );
       })}
     </Container>
