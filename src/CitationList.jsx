@@ -5,7 +5,6 @@ import Container from './Container';
 import { StyledListHeading } from './Modal';
 
 const CitationList = ({ citationsPrevious, style }) => {
-  console.log('styleinside', style);
   return (
     <Container style={style}>
       <StyledListHeading>Your {style} Format Citations</StyledListHeading>
