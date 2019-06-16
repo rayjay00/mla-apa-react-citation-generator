@@ -92,7 +92,7 @@ const App = () => {
         <Choose chooseStyle={chooseStyle} style={style} />
         <StyledAbout>
           <a href='https://www.ryanjordal.me'>Built by Ryan</a>. See it
-          <a href='https://www.github.com/rayjay00'>here on GitHub.</a>
+          <a href='https://www.github.com/rayjay00'> here on GitHub.</a>
         </StyledAbout>
         <CitationForm
           handleSubmit={handleSubmit}
