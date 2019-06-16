@@ -24,12 +24,11 @@ export const StyledSubmitButton = styled.button`
   font-size: 22px;
   text-decoration: none;
   margin: 20px auto;
-  color: ${props => (props.onClick ? `black` : `white`)};
+  color: ${stylesettings.mla.primary};
   position: relative;
   border: 0;
   display: flex;
-  background-color: ${props =>
-    props.onClick ? `white` : stylesettings.mla.primary};
+  background-color: white;
   &:active {
     transform: translate(0px, 5px);
     box-shadow: 0px 1px 0px 0px;
