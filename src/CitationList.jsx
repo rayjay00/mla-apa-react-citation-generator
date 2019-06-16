@@ -6,12 +6,8 @@ import { StyledListHeading } from './Modal';
 
 const CitationList = ({ citationsPrevious, style }) => {
   return (
-    <Container list='true' selected={style}>
-      <StyledListHeading>
-        Your
-        {style}
-        Format Citations
-      </StyledListHeading>
+    <Container selected={style}>
+      <StyledListHeading>Your {style} Format Citations</StyledListHeading>
       {citationsPrevious.map(citation => {
         return (
           <Citation key={citation} style={style} citationText={citation} />
