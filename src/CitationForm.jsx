@@ -7,7 +7,7 @@ const StyledLabel = styled.label`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 1rem;
   padding: 1rem 0;
   color: white;
   font-weight: bold;
