@@ -10,7 +10,7 @@ const StyledContainer = styled.div`
   border-radius: 10px;
   background-color: ${props =>
     props.selected === 'MLA'
-      ? stylesettings.mla.secondary
+      ? stylesettings.mla.primary
       : stylesettings.apa.primary};
   @media screen and (min-width: 667px) {
     width: 75%;
