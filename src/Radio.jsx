@@ -8,9 +8,13 @@ const StyledRadioInput = styled.div`
   justify-content: space-between;
 `;
 
+const StyledRadioLabel = styled.label`
+  margin: 0 1rem;
+`;
+
 const Radio = ({ chooseStyle, style }) => (
   <StyledRadioInput>
-    <label htmlFor='MLA'>
+    <StyledRadioLabel htmlFor='MLA'>
       MLA
       <input
         type='radio'
@@ -20,8 +24,8 @@ const Radio = ({ chooseStyle, style }) => (
         checked={style === 'MLA'}
         onChange={chooseStyle}
       />
-    </label>
-    <label htmlFor='APA'>
+    </StyledRadioLabel>
+    <StyledRadioLabel htmlFor='APA'>
       APA
       <input
         type='radio'
@@ -31,7 +35,7 @@ const Radio = ({ chooseStyle, style }) => (
         checked={style === 'APA'}
         onChange={chooseStyle}
       />
-    </label>
+    </StyledRadioLabel>
   </StyledRadioInput>
 );
 
