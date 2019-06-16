@@ -19,12 +19,16 @@ export const stylesettings = {
 };
 
 export const StyledSubmitButton = styled.button`
-  border-radius: 5px;
-  padding: 15px 25px;
+  border-radius: ${props => (props.onClick ? `0` : `5px`)};
+  padding: ${props => (props.onClick ? `0.2rem` : `15px 25px`)};
   font-size: 22px;
   text-decoration: none;
   margin: 20px auto;
-  color: ${stylesettings.mla.primary};
+  ${props => props.onClick && `margin-bottom: 0;`}
+  color: ${props =>
+    props.selected === 'MLA'
+      ? stylesettings.mla.primary
+      : stylesettings.apa.primary};
   position: relative;
   border: 0;
   display: flex;
