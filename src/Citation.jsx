@@ -35,7 +35,13 @@ const Citation = ({ citationText, style }) => {
   );
 
   return (
-    <div>{style === 'MLA' ? { mlaCitationFormat } : { apaCitationFormat }}</div>
+    <React.Fragment>
+      {style === 'MLA' ? (
+        <React.Fragment>{mlaCitationFormat}</React.Fragment>
+      ) : (
+        <React.Fragment>{apaCitationFormat}</React.Fragment>
+      )}
+    </React.Fragment>
   );
 };
 
@@ -45,7 +51,7 @@ Citation.propTypes = {
     first: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     publisher: PropTypes.string.isRequired,
-    year: PropTypes.number.isRequired
+    year: PropTypes.string.isRequired
   }).isRequired,
   style: PropTypes.string.isRequired
 };
