@@ -12,15 +12,7 @@ const StyledContainer = styled.div`
     props.selected === 'MLA'
       ? stylesettings.mla.primary
       : stylesettings.apa.primary};
-  @media screen and (min-width: 667px) {
-    width: 75%;
-  }
-  @media screen and (min-width: 768px) {
-    width: 40%;
-  }
-  @media screen and (min-width: 1261px) {
-    width: auto;
-  }
+  width: auto;
 `;
 
 const Container = ({ style, children }) => {
