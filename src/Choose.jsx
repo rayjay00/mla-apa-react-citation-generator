@@ -25,7 +25,7 @@ const Choose = ({ chooseStyle, style }) => {
 };
 
 Choose.propTypes = {
-  chooseStyle: PropTypes.string.isRequired,
+  chooseStyle: PropTypes.func.isRequired,
   style: PropTypes.string.isRequired
 };
 

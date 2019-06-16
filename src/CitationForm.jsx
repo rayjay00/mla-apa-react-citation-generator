@@ -119,10 +119,10 @@ const CitationForm = ({
 CitationForm.propTypes = {
   updateState: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
-  firstVal: PropTypes.string.isRequired,
-  lastVal: PropTypes.string.isRequired,
+  firstVal: PropTypes.string,
+  lastVal: PropTypes.string,
   titleVal: PropTypes.string.isRequired,
-  yearVal: PropTypes.number.isRequired,
+  yearVal: PropTypes.string,
   cityVal: PropTypes.string.isRequired,
   pubVal: PropTypes.string.isRequired,
   stateVal: PropTypes.string.isRequired,
