@@ -37,8 +37,14 @@ const Modal = ({ modalClosed, citation, style }) => {
 };
 
 Modal.propTypes = {
-  modalClosed: PropTypes.bool.isRequired,
-  citation: PropTypes.string.isRequired,
+  modalClosed: PropTypes.func.isRequired,
+  citation: PropTypes.shape({
+    last: PropTypes.string.isRequired,
+    first: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    publisher: PropTypes.string.isRequired,
+    year: PropTypes.string.isRequired
+  }).isRequired,
   style: PropTypes.string.isRequired
 };
 
