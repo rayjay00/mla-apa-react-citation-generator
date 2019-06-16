@@ -9,7 +9,7 @@ import Modal from './Modal';
 const StyledWrapper = styled.section`
   display: flex;
   margin: 0 auto;
-  @media screen and (max-width: 551px) {
+  @media screen and (max-width: 708px) {
     flex-direction: column-reverse;
   }
   @media screen and (min-width: 1500px) {
