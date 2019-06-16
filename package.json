@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "copy-to-clipboard": "^3.1.0",
+    "eslint-config-prettier": "^4.3.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.8.6",
@@ -26,6 +28,10 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "eslint-plugin-jsx-a11y": "^6.2.1"
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0"
   }
 }
