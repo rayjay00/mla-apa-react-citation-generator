@@ -91,8 +91,7 @@ const App = () => {
       <Container style={style}>
         <Choose chooseStyle={chooseStyle} style={style} />
         <StyledAbout>
-          Built by
-          <a href='https://www.ryanjordal.me'>Ryan</a>. See it
+          <a href='https://www.ryanjordal.me'>Built by Ryan</a>. See it
           <a href='https://www.github.com/rayjay00'> here on GitHub.</a>
         </StyledAbout>
         <CitationForm
