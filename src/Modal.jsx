@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import Citation from './Citation';
 import { StyledSubmitButton, stylesettings } from './StylesSettings';
-import PropTypes from 'prop-types';
 
 const StyledModal = styled.div`
   position: absolute;
@@ -28,10 +28,10 @@ const Modal = ({ modalClosed, citation, style }) => {
       aria-describedby='dialog1Desc'
     >
       <StyledListHeading id='dialogTitle'>
-        Here's your citation!
+        Here&apos;s your citation!
       </StyledListHeading>
       <Citation id='dialog1Desc' citationText={citation} style={style} />
-      <StyledSubmitButton onClick={modalClosed}>x</StyledSubmitButton>
+      <StyledSubmitButton onClick={modalClosed}>Close</StyledSubmitButton>
     </StyledModal>
   );
 };
