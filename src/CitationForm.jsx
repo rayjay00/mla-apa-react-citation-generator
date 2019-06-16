@@ -129,4 +129,10 @@ CitationForm.propTypes = {
   style: PropTypes.string.isRequired
 };
 
+CitationForm.defaultProps = {
+  firstVal: '',
+  lastVal: '',
+  yearVal: ''
+};
+
 export default CitationForm;
