@@ -6,5 +6,5 @@ If you toggle to APA, a new form field will show up for a state. If you don't en
 
 Future ideas for this project:
 * Add an option to copy the citation from the modal and the list
-* Use local storage to display previous citations
+* Add user login option to load and save citations 
 * More citation options
